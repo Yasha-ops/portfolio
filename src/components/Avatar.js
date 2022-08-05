@@ -76,7 +76,8 @@ export function Model(props) {
 
   document.addEventListener('mousemove', function(e) {
     var mousecoords = getMousePos(e);
-    moveJoint(mousecoords, nodes['Head'], 10);
+    moveJoint(mousecoords, nodes['Head'], 5);
+    moveJoint(mousecoords, nodes['Neck'], 10);
     moveJoint(mousecoords, nodes['LeftEye'], 20);
     moveJoint(mousecoords, nodes['RightEye'], 20);
   });
@@ -85,10 +86,10 @@ export function Model(props) {
 
 
   useEffect(() => {/* highlight-line */
-    actions['Action.002'].repetitions = 1;
-    actions['Wolf3D_HeadAction'].repetitions = 1;
+    //actions['Action.002'].repetitions = 1;
+    //actions['Wolf3D_HeadAction'].repetitions = 1;
 
-    actions['Action.002'].play(); /* highlight-line */
+    //actions['Action.002'].play(); /* highlight-line */
     actions['Wolf3D_HeadAction'].play(); /* highlight-line */
   }, []); /* highlight-line */
 
