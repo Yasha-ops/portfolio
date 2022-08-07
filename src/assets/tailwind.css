@@ -1,9 +1,19 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Work+Sans:wght@300;400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
+@layer components {
+    .hamburger div:first-child {
+      @apply rotate-45 translate-y-1.5;
+    }
+    .hamburger div:last-child {
+      @apply -rotate-45 -translate-y-1;
+    }
+  }
 
 body{
-    @apply flex h-screen w-screen;
+    @apply bg-darkBlue;
 }
