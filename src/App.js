@@ -14,7 +14,6 @@ export default function App() {
   return (
     <div className='flex mx-5 my-5 w-screen h-screen bg-green-500' name='appBody'>
       <div className='flex flex-col flex-auto bg-green-500'>
-        <NavBar />
         <MainTitle />
         <Presentation />
         <MyWork />
