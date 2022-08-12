@@ -20,7 +20,7 @@ export default function MainTitle() {
                          </div>
                     </div>
 
-                    <div className="relative flex-1 max-h-screen">
+                    <div className="relative flex-1 max-h-screen" id="scene">
                         <Scene/>
                     </div>
                 </div>
