@@ -17,3 +17,7 @@
 body{
     @apply bg-darkBlue;
 }
+
+htlm{
+  @apply w-screen h-screen bg-emerald-500;
+}

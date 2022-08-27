@@ -20,6 +20,10 @@ module.exports = {
         carolinaBlue: '#00A6ED',
         lemonMeringue: '#EAE2B7',
       },
+
+      screens:{
+        lgs: "1000px",
+      }
     },
   },
   plugins: [],
