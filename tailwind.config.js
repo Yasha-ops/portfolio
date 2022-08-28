@@ -22,7 +22,17 @@ module.exports = {
       },
 
       screens:{
-        lgs: "1000px",
+        'mini_phone': '300px',
+
+        'tablet': '660px',
+        // => @media (min-width: 640px) { ... }
+  
+        'big_tablet': '900px',
+
+        'laptop': '1024px',
+        // => @media (min-width: 1024px) { ... }
+  
+        'desktop': '1280px',
       }
     },
   },

@@ -56,6 +56,17 @@ main {
   height: 100%;
 }
 
+.title-div{
+  @apply flex-auto ml-10 text-left
+}
+
+.title-div .title{
+  @apply mb-4 big_tablet:mb-5 desktop:mb-6 desktop:text-9xl big_tablet:text-8xl laptop:text-8xl mini_phone:text-6xl text-white text-8xl font-WorkSans 
+}
+
+.title-div .description{
+  @apply hidden big_tablet:text-2xl desktop:text-4xl lg:block tablet:text-sm md:block text-base text-white font-WorkSans
+}
 
 @media only screen and (max-aspect-ratio: 8/7) {
   main {
@@ -70,5 +81,9 @@ main {
     width: 100%;
     max-width: 100%;
     height: 60vh;
+  }
+
+  .title-div{
+    @apply flex-auto laptop:ml-10 desktop:ml-10 text-center
   }
 }
