@@ -5,10 +5,13 @@ import MainTitle from './components/MainTitle';
 
 export default function App() {
   return (
-    <div className='flex w-full h-full bg-yellow-500' name='appBody'>
-      <div className='flex flex-col flex-auto'>
-        <MainTitle/>
-      </div>
-    </div>
+    <div className="h-full w-full">
+      <MainTitle/>
+  
+      <section>
+        <h1>Pouxy content !!</h1>
+      </section>
+
+    </div>  
   );
 }
