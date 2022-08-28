@@ -23,8 +23,7 @@ export default function Scene() {
       style={{
         backgroundColor: '#111a21',
       }}
-      updateDefaultCamera ={true}
-    >
+      className="canvas" dpr={[1, 2]}>
       <ambientLight intensity={1.25} />
       <directionalLight intensity={0.4} />
       <Head/>
