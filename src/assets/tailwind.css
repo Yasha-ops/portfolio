@@ -34,13 +34,8 @@ main {
   padding: 0;
 }
 
-body {
-  cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxMCIgZmlsbD0iI0U4QjA1OSIvPjwvc3ZnPg=='),
-    auto;
-}
-
 main {
-  background: #f0f0f0;
+  @apply bg-darkBlue;
   display: flex;
   flex-direction: row;
 }
@@ -57,21 +52,24 @@ main {
 }
 
 .title-div{
-  @apply flex-auto ml-10 text-left
+  @apply flex-auto text-left laptop:ml-10 desktop:ml-10
 }
 
 .title-div .title{
-  @apply mb-4 big_tablet:mb-5 desktop:mb-6 desktop:text-9xl big_tablet:text-8xl laptop:text-8xl mini_phone:text-6xl text-white text-8xl font-WorkSans 
+  @apply mb-4 big_tablet:mb-5 desktop:mb-6 desktop:text-9xl big_tablet:text-8xl laptop:text-8xl mini_phone:text-6xl text-white text-8xl font-WorkSans select-none 
 }
 
 .title-div .description{
-  @apply hidden big_tablet:text-2xl desktop:text-4xl lg:block tablet:text-sm md:block text-base text-white font-WorkSans
+  @apply hidden big_tablet:text-2xl desktop:text-4xl lg:block tablet:text-sm md:block text-base text-white font-WorkSans select-none
+}
+
+.navbar {
+  @apply flex absolute z-10 justify-between w-full text-3xl
 }
 
 @media only screen and (max-aspect-ratio: 8/7) {
   main {
     flex-direction: column;
-    background-color: blue;
   }
   .canvas {
     order: 1;
@@ -80,7 +78,7 @@ main {
     order: 2;
     width: 100%;
     max-width: 100%;
-    height: 60vh;
+    height: 40vh;
   }
 
   .title-div{
