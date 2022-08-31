@@ -10,10 +10,10 @@ export default function App() {
     <div className="w-full h-full">
       <NavBar/>
       <MainTitle/>
-      <SomeWork/>
+      {/*<SomeWork/>
       <section>
         <h1>Pouxy content !!</h1>
-      </section>
+  </section>*/}
     </div>  
   );
 }
