@@ -11,9 +11,10 @@ export class Card extends React.Component<CardProps> {
     render(): React.ReactNode {
         return (
             <div className="card-container group">
-                <img src={this.props.imgURL}/>
+                <img src={this.props.imgURL} className="group-hover:scale-[1.2]" />
 
-                <figcaption>
+                <figcaption
+                className="group-hover:opacity-100">
                     <h3>{this.props.title}</h3>
                     <button type="button">
                         {this.props.buttonTitle}

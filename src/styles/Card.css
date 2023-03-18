@@ -8,7 +8,6 @@
 .card-container > img {
     @apply
         block w-full h-auto
-        group-hover:scale-[1.2]
         transition-transform duration-300
         rounded-xl;
 }
@@ -17,7 +16,8 @@
     @apply
         absolute inset-0 flex items-center rounded-xl
         justify-center text-white bg-black bg-opacity-75
-        flex-col opacity-0 group-hover:opacity-100 transition-opacity
+        flex-col opacity-0
+        transition-opacity
         duration-300 text-center;
 }
 
