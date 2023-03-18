@@ -10,11 +10,11 @@
 }
 
 .title {
-    @apply text-5xl text-white font-bold tracking-wider md:text-black;
+    @apply text-5xl dark:text-white text-black font-bold tracking-wider md:text-black;
 }
 
 .subtitle {
-    @apply text-base text-white font-medium md:text-black;
+    @apply text-base dark:text-white text-black font-medium md:text-black;
 }
 
 .custom-shape-divider-bottom-1679053029 {
