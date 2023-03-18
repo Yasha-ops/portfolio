@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "react-alice-carousel/lib/alice-carousel.css";
+
+
+.min-h-screen-custom {
+    min-height: 80vh;
+}

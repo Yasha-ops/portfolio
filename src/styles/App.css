@@ -1,0 +1,5 @@
+
+
+html {
+    @apply dark:bg-background bg-white;
+}

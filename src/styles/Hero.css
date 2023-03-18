@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.background {
+    @apply  bg-gray-50 dark:bg-background;
+}
+
+.title {
+    @apply text-5xl text-white font-bold tracking-wider md:text-black;
+}
+
+.subtitle {
+    @apply text-base text-white font-medium md:text-black;
+}
+
+.custom-shape-divider-bottom-1679053029 {
+    width: 100%;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1679053029 svg {
+    position: relative;
+    display: block;
+    width: calc(106% + 1.3px);
+    height: 167px;
+}
+
+.custom-shape-divider-bottom-1679053029 .shape-fill {
+    fill: #EDB13E;
+}
+
+.min-h-screen-custom {
+    min-height: 80vh;
+}
