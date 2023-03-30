@@ -10,19 +10,24 @@ class Hackathons extends React.Component {
                     Calvinouche de viarge de saint-cimonaque de Jésus de plâtre
                 </p>
 
-                <div className="flex flex-col md:grid md:grid-rows-2 md:grid-cols-3 gap-5">
+                <div className="flex flex-col md:grid md:grid-rows-2 md:grid-cols-4 gap-5">
                     <Card
-                        imgURL="https://mattfarley.ca/img/projects/chronicled.png"
+                        imgURL="https://www.cloudfest.com/wp-content/uploads/2022/10/CloudFest_2023_event-1.jpg"
                         title="Bâtard de mosus de marde de cibouleau."
                         buttonTitle="Click me"
                     />
                     <Card
-                        imgURL="https://mattfarley.ca/img/projects/chronicled.png"
+                        imgURL="https://storage.googleapis.com/lablab-static-eu/images%2Fevents%2Fclar54a4a0000356n3mordhvt%2Fclar54a4a0000356n3mordhvt_ue13no1_thumbnailLink.jpg"
                         title="Bâtard de mosus de marde de cibouleau."
                         buttonTitle="Click me"
                     />
                     <Card
-                        imgURL="https://mattfarley.ca/img/projects/chronicled.png"
+                        imgURL="https://scontent-cdg4-2.xx.fbcdn.net/v/t39.30808-6/311888432_437507171853985_1106563159408295704_n.png?_nc_cat=101&ccb=1-7&_nc_sid=e3f864&_nc_ohc=IC2quil-LUYAX9h8_WO&_nc_ht=scontent-cdg4-2.xx&oh=00_AfCjV-4jBSanPdRpAy4wVbZzalWY6pQ3ubISp_8ggGX8fA&oe=64198D47"
+                        title="Bâtard de mosus de marde de cibouleau."
+                        buttonTitle="Click me"
+                    />
+                    <Card
+                        imgURL="https://educ.isen-mediterranee.fr/wp-content/uploads/2021/04/wavegame2021.jpg"
                         title="Bâtard de mosus de marde de cibouleau."
                         buttonTitle="Click me"
                     />

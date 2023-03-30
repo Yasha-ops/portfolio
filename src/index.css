@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+canvas {
+    height: 100%;
+    width: 100%;
+}
