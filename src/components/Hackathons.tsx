@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "./Card";
+import defnetIMG from "~/assets/defnet.png"
 
 class Hackathons extends React.Component {
     render () {
@@ -22,12 +23,17 @@ class Hackathons extends React.Component {
                         buttonTitle="Click me"
                     />
                     <Card
-                        imgURL="https://scontent-cdg4-2.xx.fbcdn.net/v/t39.30808-6/311888432_437507171853985_1106563159408295704_n.png?_nc_cat=101&ccb=1-7&_nc_sid=e3f864&_nc_ohc=IC2quil-LUYAX9h8_WO&_nc_ht=scontent-cdg4-2.xx&oh=00_AfCjV-4jBSanPdRpAy4wVbZzalWY6pQ3ubISp_8ggGX8fA&oe=64198D47"
+                        imgURL={defnetIMG}
                         title="Bâtard de mosus de marde de cibouleau."
                         buttonTitle="Click me"
                     />
                     <Card
                         imgURL="https://educ.isen-mediterranee.fr/wp-content/uploads/2021/04/wavegame2021.jpg"
+                        title="Bâtard de mosus de marde de cibouleau."
+                        buttonTitle="Click me"
+                    />
+                    <Card
+                        imgURL="https://d1guu6n8gz71j.cloudfront.net/system/post/previews/6466273/big.jpeg?1666278549"
                         title="Bâtard de mosus de marde de cibouleau."
                         buttonTitle="Click me"
                     />

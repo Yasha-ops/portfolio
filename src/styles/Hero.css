@@ -14,7 +14,7 @@
 }
 
 .subtitle {
-    @apply text-base dark:text-white text-black font-medium md:text-black;
+    @apply text-sm dark:text-white text-black font-medium md:text-black;
 }
 
 .custom-shape-divider-bottom-1679053029 {
@@ -33,6 +33,15 @@
     fill: #EDB13E;
 }
 
-.min-h-screen-custom {
-    min-height: 80vh;
+.img_part {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.h-screen-custom {
+    height:  calc(100vh - 64px);
 }

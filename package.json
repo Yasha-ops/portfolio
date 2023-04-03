@@ -18,8 +18,11 @@
     "@types/three": "^0.149.0",
     "dat.gui": "^0.7.9",
     "react": "^18.2.0",
+    "react-awesome-shapes": "^0.1.12",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
+    "react-swipeable": "^7.0.0",
+    "react-type-animation": "^3.0.1",
     "three": "^0.150.1"
   },
   "devDependencies": {
