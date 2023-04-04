@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Carousel, { CarouselItem } from "./Carousel";
+import Carousel, { CarouselItem, GridCarousel } from "./Carousel";
 import { Card } from "./Card";
 
 import gearedCameraInCVideo from "~/assets/GCC.mp4"
@@ -11,17 +11,68 @@ import gummu from "~/assets/GearedCameraInC.png"
 import krylegal from "~/assets/krylegal.png"
 import eyet from "~/assets/Eye-t.png"
 
+
+const PROJECTS = [
+    {
+        imgURL: gearedCameraInCVideo,
+        title: "Geared Camera In C",
+        buttonTitle: "Click me",
+        isVideo: true,
+        description: "AI automatic camera facial recognition from scratch in C",
+        stars: 12,
+        commits: 12
+    },
+    {
+        imgURL: torideani,
+        title: "Torideani",
+        buttonTitle: "Click me",
+        isVideo: true,
+        stars: 12,
+        description: "Cross-plateform Multiplayer Game hide and seek C#",
+        commits: 12
+    },
+    {
+        imgURL: gummu,
+        title: "Gummu",
+        buttonTitle: "Click me",
+        isVideo: true,
+        description: "Decentralized Music streaming plateforme on Massa Blockchain",
+        stars: 12,
+        commits: 12
+    },
+    {
+        imgURL: krylegal,
+        title: "KryLegal",
+        description: "Decentralized Music streaming plateforme on Massa Blockchain",
+        buttonTitle: "Click me"
+    },
+    {
+        imgURL: krylegal,
+        title: "42sh",
+        description: "Decentralized Music streaming plateforme on Massa Blockchain",
+        buttonTitle: "Click me"
+    },
+    {
+        imgURL: krylegal,
+        title: "DHCPouxy",
+        description: "Decentralized Music streaming plateforme on Massa Blockchain",
+        buttonTitle: "Click me"
+    },
+]
+
+
+// TODO: Add project description image etc... Flip card animation
 const Project = (props: any) => {
     return (
         <div className="card-container group">
-            <div className="w-[350px] bg-white group-hover:scale-[1.2] flex flex-col justify-between h-full text-center">
-                <div className="text-center">
+            <div className="flex-auto w-full bg-white group-hover:scale-[1.2] flex flex-col justify-between h-full text-center">
+                <div className="text-center w-full">
                     <span className="pb-5 font-semibold text-secondary text-lg">{props.title}</span>
                     <hr className="h-px bg-primary border-0"></hr>
                 </div>
 
-                <div className="w-full text-center px-4 bg-green">
-                    <span className="text-md">{props.description}</span>
+                <div className="w-full text-center flex-auto items-center justify-center flex">
+                    <p>{props.description}</p>
                 </div>
 
                 <div className="w-full">
@@ -31,6 +82,9 @@ const Project = (props: any) => {
                             <AiFillStar />
                             <span>{props.stars}</span>
                         </div>
+                        <span className="font-semibold">
+                            More infos
+                        </span>
                         <div className="flex items-center">
                             <TbGitCommit />
                             <span>{props.commits}</span>
@@ -54,63 +108,24 @@ const Project = (props: any) => {
 class Projects extends React.Component {
     render() {
         return (
-            <section className="h-auto w-full bg-primary text-left flex flex-col items-center px-4 gap-5 py-20">
-                <h1 className="px-4 text-white font-bold text-4xl tracking-wider">My projects</h1>
-                <h2>Here are a few past projects I've worked on.</h2>
-
-                <Carousel>
-                    <CarouselItem>
-                        <div className="grid grid-cols-1 grid-rows-3 md:grid-rows-2 md:grid-flow-col gap-5" data-name='item1'>
-                            <Project
-                                imgURL={gearedCameraInCVideo}
-                                title="Geared Camera In C"
-                                buttonTitle="Click me"
-                                isVideo={true}
-                                description={"AI automatic camera facial recognition from scratch in C"}
-                                stars={12}
-                                commits={12}
+            <section className="h-auto w-full bg-primary text-center flex flex-col items-center px-4 gap-5 py-20">
+                <h1 className="text-white font-bold text-4xl tracking-wider">My projects</h1>
+                <p className="pb-4 text-lg font-semibold text-white">Here are a few padeed dede st projects I've worked on.</p>
+                <GridCarousel cols={1} rows={3} gap={5}>
+                    {
+                        PROJECTS.map((elt) => {
+                            return <Project
+                                imgURL={elt.imgURL}
+                                title={elt.title}
+                                buttonTitle={elt.buttonTitle}
+                                isVideo={elt.isVideo}
+                                description={elt.description ?? ""}
+                                stars={elt.stars ?? 0}
+                                commits={elt.commits ?? 0}
                             />
-                            <Project
-                                imgURL={torideani}
-                                title="Torideani"
-                                buttonTitle="Click me"
-                                isVideo={true}
-                                stars={12}
-                                description={"Cross-plateform Multiplayer Game hide and seek C#"}
-                                commits={12}
-                            />
-                            <Project
-                                imgURL={gummu}
-                                title="Gummu"
-                                buttonTitle="Click me"
-                                isVideo={true}
-                                description={"Decentralized Music streaming plateforme on Massa Blockchain"}
-                                stars={12}
-                                commits={12}
-                            />
-                        </div>
-                    </CarouselItem>
-
-                    <CarouselItem>
-                        <div className="grid grid-cols-1 grid-rows-3 md:grid-rows-2 md:grid-flow-col gap-5" data-name='item2'>
-                            <Project
-                                imgURL={krylegal}
-                                title="KryLegal"
-                                buttonTitle="Click me"
-                            />
-                            <Project
-                                imgURL={krylegal}
-                                title="42sh"
-                                buttonTitle="Click me"
-                            />
-                            <Project
-                                imgURL={krylegal}
-                                title="DHCPouxy"
-                                buttonTitle="Click me"
-                            />
-                        </div>
-                    </CarouselItem>
-                </Carousel>
+                        })
+                    }
+                </GridCarousel>
             </section>
         )
     }

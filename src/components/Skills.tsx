@@ -22,8 +22,8 @@ const CARDS = [
             "Batèche de gériboire de bout dviarge de doux Jésus",
         ],
         technologies: [
-            SiWireshark,
-            SiCisco
+            //SiWireshark,
+            //SiCisco
         ]
     },
     {
@@ -38,8 +38,8 @@ const CARDS = [
             "Batèche de gériboire de bout dviarge de doux Jésus",
         ],
         technologies: [
-            SiWireshark,
-            SiCisco
+            //SiWireshark,
+            //SiCisco
         ]
     },
     {
@@ -54,7 +54,7 @@ const CARDS = [
             "Batèche de gériboire de bout dviarge de doux Jésus",
         ],
         technologies: [
-            FaReact, FaPython, FaDocker, FiMoreHorizontal
+            //FaReact, FaPython, FaDocker, FiMoreHorizontal
         ]
     }
 ]
@@ -89,7 +89,7 @@ class Card extends React.Component<CardProps, { [key: string]: any }> {
                         })
                     }
                 </ul>
-                <h4 className="text-lg font-bold uppercase pt-16">Technologies</h4>
+                {/*<h4 className="text-lg font-bold uppercase pt-16">Technologies</h4>*/}
                 <div className={`grid grid-rows-${Math.round(this.props.techologies.length / 3 + 1)} gap-10 pt-5 grid-cols-2`}>
 
                         {

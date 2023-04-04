@@ -1,13 +1,13 @@
 
 .card-container {
-    @apply bg-white w-full rounded-xl flex
+    @apply bg-white w-full min-w-[150px] rounded-xl flex
         flex-col items-center aspect-video
         relative overflow-hidden;
 }
 
 .card-container > img {
     @apply
-        block w-full h-auto
+        block w-full h-full
         transition-transform duration-300
         rounded-xl;
 }

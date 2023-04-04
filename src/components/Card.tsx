@@ -16,11 +16,7 @@ export class Card extends React.Component<CardProps> {
     render(): React.ReactNode {
         return (
             <div className="card-container group">
-                {
-                    this.props.isVideo
-                        ? <video src={this.props.imgURL} className="group-hover:scale-[1.2]" autoPlay={true} loop/>
-                        : <img src={this.props.imgURL} className="group-hover:scale-[1.2]" />
-                }
+                <img src={this.props.imgURL} className="group-hover:scale-[1.2]" />
 
                 <figcaption
                 className="group-hover:opacity-100">

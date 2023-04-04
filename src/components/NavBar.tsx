@@ -25,6 +25,7 @@ const REDIR_BUTTONS = [
     },
 ]
 
+// TODO: Add menu mobile
 class NavBar extends React.Component {
     render() {
         return (
