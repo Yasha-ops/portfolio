@@ -1,0 +1,30 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Create a new branch for the built files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git checkout -b prod
+          git add dist/*
+          git commit -m "Built files for prod"
+          git push origin prod
+      - name: Clean up the built files branch
+        run: git checkout master && git branch -D prod
