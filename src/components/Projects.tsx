@@ -11,6 +11,8 @@ import gummu from "~/assets/GearedCameraInC.png"
 import krylegal from "~/assets/krylegal.png"
 import eyet from "~/assets/Eye-t.png"
 
+import { SiGithub } from 'react-icons/si';
+import { AiOutlineLink, AiOutlineInfoCircle } from 'react-icons/ai';
 
 const PROJECTS = [
     {
@@ -65,25 +67,31 @@ const PROJECTS = [
 const Project = (props: any) => {
     return (
         <div className="card-container group">
-            <div className="flex-auto w-full bg-white group-hover:scale-[1.2] flex flex-col justify-between h-full text-center">
-                <div className="text-center w-full">
-                    <span className="pb-5 font-semibold text-secondary text-lg">{props.title}</span>
-                    <hr className="h-px bg-primary border-0"></hr>
+            <div className="flex-auto w-full bg-background flex flex-col h-full text-center text-green-500">
+                <div className="text-center w-full bg-[#D5CDCA] text-black">
+                    <div className="w-full flex px-5 items-center gap-5">
+                        <div className="flex justify-around gap-2" data-name="buttons">
+                            <div className="rounded-full bg-[#F21D2C] w-4 h-4"></div>
+                            <div className="rounded-full bg-[#FCA112] w-4 h-4"></div>
+                            <div className="rounded-full bg-[#49B446] w-4 h-4"></div>
+                        </div>
+                        <span className="font-medium text-secondary text-lg text-center">{props.title}</span>
+                    </div>
                 </div>
 
-                <div className="w-full text-center flex-auto items-center justify-center flex">
-                    <p>{props.description}</p>
+                <div className="w-full text-left flex-auto flex flex-col px-4 gap-3 pt-4">
+                    <p>yasha: ~$ <span className="text-white">cat README.md</span></p>
+                    <p className="text-white">{props.description}</p>
                 </div>
 
-                <div className="w-full">
-                    <hr className="h-px bg-primary border-0 "></hr>
-                    <div className="w-full flex justify-between px-5">
+                <div className="w-full bg-[#D5CDCA]">
+                    <div className="w-full flex justify-between px-5 text-black">
                         <div className="flex items-center">
                             <AiFillStar />
                             <span>{props.stars}</span>
                         </div>
                         <span className="font-semibold">
-                            More infos
+                            Click for infos
                         </span>
                         <div className="flex items-center">
                             <TbGitCommit />
@@ -93,12 +101,13 @@ const Project = (props: any) => {
                 </div>
             </div>
 
-            < figcaption
-                className="group-hover:opacity-100" >
+            <figcaption className="group-hover:opacity-100">
                 <h3>{props.title}</h3>
-                <button type="button">
-                    {props.buttonTitle}
-                </button>
+                <div className="flex w-full justify-around px-5">
+                    <button type="button"><SiGithub size={'100%'}/></button>
+                    <button type="button"><AiOutlineLink size={'100%'}/></button>
+                    <button type="button"><AiOutlineInfoCircle size={'100%'}/></button>
+                </div>
             </figcaption >
         </div >
     );

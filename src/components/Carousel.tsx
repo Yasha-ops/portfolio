@@ -12,7 +12,13 @@ export const CarouselItem = ({ children }: any) => {
 };
 
 const Carousel = ({ children }: any) => {
+
+  const Indicator = (props: any) => {
+    return <div className={`rounded-full h-4 aspect-square bg-background ${props.index == props.currentIndex ? 'bg-opacity-100' : 'bg-opacity-20'}`}></div>
+  };
+
   const [activeIndex, setActiveIndex] = useState(0);
+
   const [paused, setPaused] = useState(false);
 
   const updateIndex = (newIndex: any) => {
@@ -46,11 +52,19 @@ const Carousel = ({ children }: any) => {
   });
 
   return (
-    <div {...handlers} className="carousel" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} data-name='carousel' >
+    <div {...handlers} className="carousel flex flex-col gap-7" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} data-name='carousel' >
       <div className="inner" style={{ transform: `translateX(-${activeIndex * 100}%)` }} >
         {React.Children.map(children, (child, index) => {
           return React.cloneElement(child);
         })}
+      </div>
+      <div className="w-full flex justify-center items-center" data-name='indicators'>
+        <div className="flex gap-3">
+          {
+            React.Children.map(children, (child, index) => {
+              return <Indicator index={index} currentIndex={activeIndex} />
+            })}
+        </div>
       </div>
     </div>
   );
@@ -59,10 +73,10 @@ const Carousel = ({ children }: any) => {
 
 interface GridCarouselProps {
   children: any,
-  rows : number,
-  cols : number,
-  gap : number,
-  isHorizontal : boolean
+  rows: number,
+  cols: number,
+  gap: number,
+  isHorizontal: boolean
 }
 
 
@@ -94,8 +108,6 @@ export class GridCarousel extends React.Component<GridCarouselProps, any>{
       childrenArray: this.convertArray(React.Children.toArray(this.props.children),
         this.props.cols * this.props.rows)
     }
-
-    console.log("STATE", this.state);
   }
 
   render() {
@@ -103,19 +115,19 @@ export class GridCarousel extends React.Component<GridCarouselProps, any>{
       <Carousel>
         {
           this.state.childrenArray.map((rows: any) => {
-            const customClass = ! this.props.isHorizontal
-                ? `grid grid-cols-${this.props.cols} grid-rows-${this.props.rows} gap-${this.props.gap} w-full`
-                : `flex justify-between gap-${this.props.gap}`;
+            const customClass = !this.props.isHorizontal
+              ? `grid grid-cols-${this.props.cols} grid-rows-${this.props.rows} gap-${this.props.gap} w-full whitespace-normal`
+              : `flex justify-between gap-${this.props.gap}`;
             return (
-            <CarouselItem>
-              <div className={customClass}>
-                {
-                  rows.map((elt: any) => {
-                    return elt
-                  })
-                }
-              </div>
-            </CarouselItem>)
+              <CarouselItem>
+                <div className={customClass}>
+                  {
+                    rows.map((elt: any) => {
+                      return elt
+                    })
+                  }
+                </div>
+              </CarouselItem>)
           })
         }
       </Carousel>
