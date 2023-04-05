@@ -13,17 +13,20 @@ export const CarouselItem = ({ children }: any) => {
 
 const Carousel = ({ children }: any) => {
 
-  const Indicator = (props: any) => {
-    return <div className={`rounded-full h-4 aspect-square bg-background ${props.index == props.currentIndex ? 'bg-opacity-100' : 'bg-opacity-20'}`}></div>
-  };
-
   const [activeIndex, setActiveIndex] = useState(0);
-
   const [paused, setPaused] = useState(false);
+
+  const Indicator = (props: any) => {
+    return <div
+    onClick={(e) => setActiveIndex(props.index)}
+    className={`rounded-full h-4 aspect-square bg-background ${props.index == props.currentIndex ? 'bg-opacity-100' : 'bg-opacity-20'}`}>
+
+    </div>
+  };
 
   const updateIndex = (newIndex: any) => {
     if (newIndex < 0) {
-      newIndex = React.Children.count(children) - 1;
+      newIndex = 0;
     } else if (newIndex >= React.Children.count(children)) {
       newIndex = 0;
     }
@@ -61,9 +64,11 @@ const Carousel = ({ children }: any) => {
       <div className="w-full flex justify-center items-center" data-name='indicators'>
         <div className="flex gap-3">
           {
+            React.Children.count(children) != 1 ?
             React.Children.map(children, (child, index) => {
               return <Indicator index={index} currentIndex={activeIndex} />
-            })}
+            }) : ''
+          }
         </div>
       </div>
     </div>
@@ -76,7 +81,8 @@ interface GridCarouselProps {
   rows: number,
   cols: number,
   gap: number,
-  isHorizontal: boolean
+  isHorizontal: boolean,
+  className: string
 }
 
 
@@ -88,6 +94,7 @@ export class GridCarousel extends React.Component<GridCarouselProps, any>{
     isHorizontal: false,
     rows: 1,
     cols: 1,
+    className: ''
   }
 
   convertArray(array: any, n: number) {
@@ -115,9 +122,10 @@ export class GridCarousel extends React.Component<GridCarouselProps, any>{
       <Carousel>
         {
           this.state.childrenArray.map((rows: any) => {
-            const customClass = !this.props.isHorizontal
+            let customClass = !this.props.isHorizontal
               ? `grid grid-cols-${this.props.cols} grid-rows-${this.props.rows} gap-${this.props.gap} w-full whitespace-normal`
               : `flex justify-between gap-${this.props.gap}`;
+            customClass = customClass + ' ' + this.props.className;
             return (
               <CarouselItem>
                 <div className={customClass}>

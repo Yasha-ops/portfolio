@@ -104,9 +104,9 @@ const Project = (props: any) => {
             <figcaption className="group-hover:opacity-100">
                 <h3>{props.title}</h3>
                 <div className="flex w-full justify-around px-5">
-                    <button type="button"><SiGithub size={'100%'}/></button>
-                    <button type="button"><AiOutlineLink size={'100%'}/></button>
-                    <button type="button"><AiOutlineInfoCircle size={'100%'}/></button>
+                    <button type="button"><SiGithub size={'100%'} /></button>
+                    <button type="button"><AiOutlineLink size={'100%'} /></button>
+                    <button type="button"><AiOutlineInfoCircle size={'100%'} /></button>
                 </div>
             </figcaption >
         </div >
@@ -120,21 +120,40 @@ class Projects extends React.Component {
             <section className="h-auto w-full bg-primary text-center flex flex-col items-center px-4 gap-5 py-20" id='projects'>
                 <h1 className="text-white font-bold text-4xl tracking-wider">My projects</h1>
                 <p className="pb-4 text-lg font-semibold text-white">Here are a few padeed dede st projects I've worked on.</p>
-                <GridCarousel cols={1} rows={3} gap={5}>
-                    {
-                        PROJECTS.map((elt) => {
-                            return <Project
-                                imgURL={elt.imgURL}
-                                title={elt.title}
-                                buttonTitle={elt.buttonTitle}
-                                isVideo={elt.isVideo}
-                                description={elt.description ?? ""}
-                                stars={elt.stars ?? 0}
-                                commits={elt.commits ?? 0}
-                            />
-                        })
-                    }
-                </GridCarousel>
+                <div className='w-full md:hidden block' data-name='small'>
+                    <GridCarousel cols={1} rows={2} gap={5}>
+                        {
+                            PROJECTS.map((elt) => {
+                                return <Project
+                                    imgURL={elt.imgURL}
+                                    title={elt.title}
+                                    buttonTitle={elt.buttonTitle}
+                                    isVideo={elt.isVideo}
+                                    description={elt.description ?? ""}
+                                    stars={elt.stars ?? 0}
+                                    commits={elt.commits ?? 0}
+                                />
+                            })
+                        }
+                    </GridCarousel>
+                </div>
+                <div className="w-full hidden md:block max-w-[900px]" data-name='medium'>
+                    <GridCarousel cols={2} rows={3} gap={5}>
+                        {
+                            PROJECTS.map((elt) => {
+                                return <Project
+                                    imgURL={elt.imgURL}
+                                    title={elt.title}
+                                    buttonTitle={elt.buttonTitle}
+                                    isVideo={elt.isVideo}
+                                    description={elt.description ?? ""}
+                                    stars={elt.stars ?? 0}
+                                    commits={elt.commits ?? 0}
+                                />
+                            })
+                        }
+                    </GridCarousel>
+                </div>
             </section>
         )
     }
