@@ -22,9 +22,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git checkout -b prod
           git add dist/*
           git commit -m "Built files for prod"
-          git push origin prod
-      - name: Clean up the built files branch
-        run: git checkout master && git branch -D prod
+          git push origin prod -f
