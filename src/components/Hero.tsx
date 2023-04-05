@@ -2,6 +2,7 @@ import React, { useEffect, useState, Children } from "react";
 import "~/styles/Hero.css"
 import { TypeAnimation } from 'react-type-animation';
 
+// @ts-expect-error
 import { CircleGrid, Donut, Diamond, Star } from "react-awesome-shapes";
 
 interface HeroProps {

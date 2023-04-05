@@ -1,11 +1,9 @@
 import React from "react";
 import "~/styles/Skills.css"
 
-class AboutMe extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
+
+class AboutMe extends React.Component {
     render () {
         return (
             <section className="min-h-screen-custom w-full bg-primary text-left h-auto">

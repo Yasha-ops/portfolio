@@ -1,6 +1,5 @@
 import React from "react";
 import { IconType } from "react-icons";
-import Slider from "react-slick";
 
 import { FaNetworkWired, FaReact, FaPython, FaDocker, FaRust } from "react-icons/fa";
 import { SiWireshark, SiCisco } from "react-icons/si"
