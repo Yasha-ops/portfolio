@@ -22,7 +22,7 @@ const Techno = (props: any) => {
     const Icon =  props.icon;
 
     return (
-        <div className='aspect-square w-full'>
+        <div className='aspect-square w-full md:max-h-[100px]'>
             <Icon size={'100%'} className="dark:text-white text-dark"/>
         </div>
     );
@@ -37,7 +37,7 @@ export default class Technologies extends React.Component {
                 <h2 className='text-lg pt-4 pb-10 font-semibold'>Astie de calvinouche de viande à chien de purée de calvaire de crime.</h2>
 
 
-                <GridCarousel cols={5} gap={5} isHorizontal={true}>
+                <GridCarousel cols={5} gap={5} isHorizontal={true} className={'md:gap-10'} >
                     {
                         TECHNOLOGIES.map((elt : any, index: number) => {
                             return <Techno
