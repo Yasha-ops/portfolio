@@ -1,21 +1,23 @@
 import React from "react";
 import "~/styles/NavBar.css"
+import * as Scroll from 'react-scroll';
+import { Link, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 
 const REDIR_BUTTONS = [
     {
         title: "Contact",
-        href: "#",
+        href: "contact",
         isPrimary: true
     },
     {
         title: "About me",
-        href: "#",
+        href: "about-me",
         isPrimary: false
     },
     {
         title: "Technologies",
-        href: "#",
+        href: "technologies",
         isPrimary: false
     },
     {
@@ -25,12 +27,12 @@ const REDIR_BUTTONS = [
     },
     {
         title: "Projects",
-        href: "#",
+        href: "projects",
         isPrimary: false
     },
     {
         title: "Hackathons / CTF's",
-        href: "#",
+        href: "hackathons-ctf",
         isPrimary: false
     },
 ]
@@ -70,11 +72,11 @@ class NavBar extends React.Component<any, any>{
                                 REDIR_BUTTONS.map((elt, idx) => {
                                     return elt.isPrimary ?
                                         <li key={idx}>
-                                            <a href={elt.href} className="navbar_button_primary" aria-current="page">{elt.title}</a>
+                                            <Link activeClass="active" to={elt.href} spy={true} smooth={true} offset={50} duration={500} className="navbar_button_primary" aria-current="page">{elt.title}</Link>
                                         </li>
                                         :
                                         <li key={idx}>
-                                            <a href={elt.href} className="navbar_button navbar_button_secondary">{elt.title}</a>
+                                            <Link activeClass="active" to={elt.href} spy={true} smooth={true} offset={50} duration={500} className="navbar_button navbar_button_secondary" aria-current="page">{elt.title}</Link>
                                         </li>
                                 })
                             }

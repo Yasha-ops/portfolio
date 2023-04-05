@@ -32,7 +32,7 @@ const Techno = (props: any) => {
 export default class Technologies extends React.Component {
     render() {
         return (
-            <section className="h-auto w-full dark:bg-background text-center text-dark px-4 py-20 dark:text-white text-dark px-4">
+            <section className="h-auto w-full dark:bg-background text-center text-dark px-4 py-20 dark:text-white text-dark" id='technologies'>
                 <h1 className="dark:text-white text-dark font-bold text-4xl tracking-wider">Technologies</h1>
                 <h2 className='text-lg pt-4 pb-10 font-semibold'>Astie de calvinouche de viande à chien de purée de calvaire de crime.</h2>
 

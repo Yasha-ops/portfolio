@@ -3,7 +3,7 @@ import React from "react";
 export default class Footer extends React.Component {
     render() {
         return (
-            <footer className="bg-white m-4 dark:bg-background w-full">
+            <footer className="bg-white m-4 dark:bg-background w-full pb-10">
                 <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
                     <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" className="hover:underline">Yassine Damiri</a>. All Rights Reserved.
                     </span>

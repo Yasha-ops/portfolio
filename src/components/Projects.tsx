@@ -117,7 +117,7 @@ const Project = (props: any) => {
 class Projects extends React.Component {
     render() {
         return (
-            <section className="h-auto w-full bg-primary text-center flex flex-col items-center px-4 gap-5 py-20">
+            <section className="h-auto w-full bg-primary text-center flex flex-col items-center px-4 gap-5 py-20" id='projects'>
                 <h1 className="text-white font-bold text-4xl tracking-wider">My projects</h1>
                 <p className="pb-4 text-lg font-semibold text-white">Here are a few padeed dede st projects I've worked on.</p>
                 <GridCarousel cols={1} rows={3} gap={5}>

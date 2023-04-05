@@ -40,7 +40,7 @@ const HACKATHONS = [
 class Hackathons extends React.Component {
     render() {
         return (
-            <section className="min-h-screen-custom w-full dark:bg-background bg-white text-center px-4 py-20 dark:text-white text-dark">
+            <section className="min-h-screen-custom w-full dark:bg-background bg-white text-center px-4 py-20 dark:text-white text-dark" id='hackathons-ctf'>
                 <h1 className="font-bold text-4xl tracking-wider ">Hackathons/CTF I've done</h1>
                 <p className="p-4 text-lg font-bold pb-[40px]">
                     Calvinouche de viarge de saint-cimonaque dpode  de Jésus de plâtre
