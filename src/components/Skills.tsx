@@ -116,7 +116,7 @@ class Skills extends React.Component<SkillsProps>{
 
     render() {
         return (
-            <section className="h-full min-h-screen-custom w-full flex-1 flex flex-col relative z-10 mt-[-100px] items-center px-4 gap-5 md:flex-row pb-5">
+            <section className="h-full min-h-screen-custom w-full flex-1 flex flex-col relative z-10 mt-[-100px] items-center px-4 gap-5 md:flex-row pb-5 md:items-stretch">
                 {
                     CARDS.map((elt, idx) => {
                         return <Card
