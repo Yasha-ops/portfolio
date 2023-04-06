@@ -20,7 +20,7 @@ export class Card extends React.Component<CardProps> {
 
                 <figcaption
                 className="group-hover:opacity-100">
-                    <h3>{this.props.title}</h3>
+                    <h3 className="max-w-[400px] text-justify">{this.props.title}</h3>
                     <button type="button">
                         {this.props.buttonTitle}
                     </button>

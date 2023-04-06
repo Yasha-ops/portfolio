@@ -11,7 +11,7 @@ export const CarouselItem = ({ children }: any) => {
   );
 };
 
-const Carousel = ({ children }: any) => {
+const Carousel = (props: any) => {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -19,7 +19,7 @@ const Carousel = ({ children }: any) => {
   const Indicator = (props: any) => {
     return <div
     onClick={(e) => setActiveIndex(props.index)}
-    className={`rounded-full h-4 aspect-square bg-background ${props.index == props.currentIndex ? 'bg-opacity-100' : 'bg-opacity-20'}`}>
+    className={`rounded-full h-4 aspect-square ${props.reverseColor ? 'dark:bg-white' : 'bg-background'} ${props.index == props.currentIndex ? 'bg-opacity-100' : 'bg-opacity-20 dark:bg-opacity-20'}`}>
 
     </div>
   };
@@ -27,7 +27,7 @@ const Carousel = ({ children }: any) => {
   const updateIndex = (newIndex: any) => {
     if (newIndex < 0) {
       newIndex = 0;
-    } else if (newIndex >= React.Children.count(children)) {
+    } else if (newIndex >= React.Children.count(props.children)) {
       newIndex = 0;
     }
 
@@ -57,16 +57,16 @@ const Carousel = ({ children }: any) => {
   return (
     <div {...handlers} className="carousel flex flex-col gap-7" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} data-name='carousel' >
       <div className="inner" style={{ transform: `translateX(-${activeIndex * 100}%)` }} >
-        {React.Children.map(children, (child, index) => {
+        {React.Children.map(props.children, (child, index) => {
           return React.cloneElement(child);
         })}
       </div>
       <div className="w-full flex justify-center items-center" data-name='indicators'>
         <div className="flex gap-3">
           {
-            React.Children.count(children) != 1 ?
-            React.Children.map(children, (child, index) => {
-              return <Indicator index={index} currentIndex={activeIndex} />
+            React.Children.count(props.children) != 1 ?
+            React.Children.map(props.children, (child, index) => {
+              return <Indicator index={index} currentIndex={activeIndex} reverseColor={props.reverseColor}/>
             }) : ''
           }
         </div>
@@ -82,7 +82,8 @@ interface GridCarouselProps {
   cols: number,
   gap: number,
   isHorizontal: boolean,
-  className: string
+  className: string,
+  reverseColor: boolean
 }
 
 
@@ -94,7 +95,8 @@ export class GridCarousel extends React.Component<GridCarouselProps, any>{
     isHorizontal: false,
     rows: 1,
     cols: 1,
-    className: ''
+    className: '',
+    reverseColor: false,
   }
 
   convertArray(array: any, n: number) {
@@ -119,7 +121,7 @@ export class GridCarousel extends React.Component<GridCarouselProps, any>{
 
   render() {
     return (
-      <Carousel>
+      <Carousel reverseColor={this.props.reverseColor}>
         {
           this.state.childrenArray.map((rows: any) => {
             let customClass = !this.props.isHorizontal

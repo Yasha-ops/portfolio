@@ -12,13 +12,14 @@ const CARDS = [
     {
         icon: FaNetworkWired,
         title: "Network",
-        description: "Sacréfice de bout d'viarge de crime de bout d'ciarge de cibole de" +
-            "colon de viande à chien de purée de boswell de christie de batince.",
+        description: "I have experience in designing and implementing computer networks, including LAN, WAN, and WLAN. " +
+                "I am proficient in configuring network devices such as routers, switches, firewalls, and load balancers. " +
+                "Additionally, I have experience in troubleshooting network issues and optimizing network performance. ",
         expertise: [
-            "Sacrament de saint-ciarge à chien de mautadine.",
-            "Jésus Marie Joseph de saint-sacrament de cibouleau.",
-            "Jésus Marie Joseph de saint-sacrament de cibouleau.",
-            "Batèche de gériboire de bout dviarge de doux Jésus",
+            "Designing and implementing computer networks",
+            "Configuring network devices such as routers, switches, firewalls, and load balancers",
+            "Troubleshooting network issues",
+            "Optimizing network performance"
         ],
         technologies: [
             //SiWireshark,
@@ -28,13 +29,14 @@ const CARDS = [
     {
         icon: MdSecurity,
         title: "Security",
-        description: "Sacréfice de bout d'viarge de crime de bout d'ciarge de cibole de" +
-            "colon de viande à chien de purée de boswell de christie de batince.",
+        description: "I have extensive knowledge and experience in cybersecurity, including risk assessment, " +
+            "threat analysis, vulnerability management, and incident response. I am proficient in various " +
+            "security technologies such as firewalls, intrusion detection and prevention systems, and security " +
+            "information and event management systems.",
         expertise: [
-            "Sacrament de saint-ciarge à chien de mautadine.",
-            "Jésus Marie Joseph de saint-sacrament de cibouleau.",
-            "Jésus Marie Joseph de saint-sacrament de cibouleau.",
-            "Batèche de gériboire de bout dviarge de doux Jésus",
+            "Risk assessment",
+            "Threat analysis",
+            "Vulnerability management",
         ],
         technologies: [
             //SiWireshark,
@@ -44,13 +46,16 @@ const CARDS = [
     {
         icon: BsStack,
         title: "Fullstack dev",
-        description: "Sacréfice de bout d'viarge de crime de bout d'ciarge de cibole de" +
-            "colon de viande à chien de purée de boswell de christie de batince.",
+        description: "I have hands-on experience in developing and deploying full-stack applications using " +
+            "various technologies such as React, Python, JavaScript, Node.js, and SQL. " +
+            "I am proficient in building RESTful APIs, implementing authentication and authorization " +
+            "mechanisms, and using cloud services such as AWS and Azure. Additionally, I have experience "  +
+            "with Docker and Rust, and I am familiar with Angular and Svelte.",
         expertise: [
-            "Sacrament de saint-ciarge à chien de mautadine.",
-            "Jésus Marie Joseph de saint-sacrament de cibouleau.",
-            "Jésus Marie Joseph de saint-sacrament de cibouleau.",
-            "Batèche de gériboire de bout dviarge de doux Jésus",
+            "Developing and deploying full-stack applications",
+            "Building RESTful APIs",
+            "Implementing authentication and authorization mechanisms",
+            "Using cloud services such as AWS and Azure"
         ],
         technologies: [
             //FaReact, FaPython, FaDocker, FiMoreHorizontal
@@ -70,7 +75,7 @@ interface CardProps {
 class Card extends React.Component<CardProps, { [key: string]: any }> {
     render() {
         return (
-            <div className="bg-white w-full rounded-xl h-auto flex flex-col items-center p-14 border-2 drop-shadow-xl">
+            <div className="bg-white w-full rounded-xl h-auto flex flex-col items-center p-14 border-2 drop-shadow-xl max-w-[500px]">
                 {
                     [this.props.icon].map((elt, idx) => {
                         const Icon = elt;
@@ -78,16 +83,18 @@ class Card extends React.Component<CardProps, { [key: string]: any }> {
                     })
                 }
                 <h3 className="font-extrabold text-2xl tracking-wide pt-4 uppercase">{this.props.title}</h3>
-                <p className="pt-5 text-base">{this.props.description}</p>
+                <p className="pt-5 text-base text-justify">{this.props.description}</p>
 
                 <h4 className="text-lg font-bold uppercase pt-9">My expertise</h4>
-                <ul className="list-disc pt-3 list-inside">
+                <div className="w-full">
+                <ul className="list-disc pt-3 list-inside text-left">
                     {
                         this.props.expertise.map((elt, idx) => {
                             return <li key={idx}>{elt}</li>
                         })
                     }
                 </ul>
+                </div>
                 {/*<h4 className="text-lg font-bold uppercase pt-16">Technologies</h4>*/}
                 <div className={`grid grid-rows-${Math.round(this.props.techologies.length / 3 + 1)} gap-10 pt-5 grid-cols-2`}>
 
@@ -116,7 +123,7 @@ class Skills extends React.Component<SkillsProps>{
 
     render() {
         return (
-            <section className="h-full w-full flex-1 flex flex-col relative z-10 mt-[-100px] items-center px-4 gap-5 md:flex-row pb-5 md:items-stretch">
+            <section className="h-full w-full flex-1 flex flex-col relative z-10 mt-[-100px] items-center px-4 gap-5 md:flex-row pb-5 md:items-stretch justify-center items-center">
                 {
                     CARDS.map((elt, idx) => {
                         return <Card

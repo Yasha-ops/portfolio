@@ -1,6 +1,6 @@
 
 .card-container {
-    @apply bg-white w-full min-w-[150px] rounded-xl flex
+    @apply bg-white w-full rounded-xl flex
         flex-col items-center aspect-video
         relative overflow-hidden;
 }

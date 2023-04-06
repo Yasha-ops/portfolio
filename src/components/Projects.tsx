@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Carousel, { CarouselItem, GridCarousel } from "./Carousel";
-import { Card } from "./Card";
 
 import gearedCameraInCVideo from "~/assets/GCC.mp4"
 import torideani from "~/assets/Torideani.mp4"
@@ -13,6 +12,7 @@ import eyet from "~/assets/Eye-t.png"
 
 import { SiGithub } from 'react-icons/si';
 import { AiOutlineLink, AiOutlineInfoCircle } from 'react-icons/ai';
+import { MdElectricBike } from "react-icons/md";
 
 const PROJECTS = [
     {
@@ -20,51 +20,70 @@ const PROJECTS = [
         title: "Geared Camera In C",
         buttonTitle: "Click me",
         isVideo: true,
-        description: "AI automatic camera facial recognition from scratch in C",
-        stars: 12,
-        commits: 12
+        description: "AI automatic camera with facial recognition capabilities from scratch using the C programming language.",
+        stars: 2,
+        commits: 118,
+        github: "https://github.com/thurayash/GearedCameraInC",
+        website: "https://yasha-ops.github.io/GearedCameraInC",
     },
     {
         imgURL: torideani,
         title: "Torideani",
         buttonTitle: "Click me",
         isVideo: true,
-        stars: 12,
-        description: "Cross-plateform Multiplayer Game hide and seek C#",
-        commits: 12
+        stars: 2,
+        description: "Cross-platform multiplayer hide and seek game built using C#. Features online real-time gameplay.",
+        commits: 70,
+        github: "https://github.com/Yasha-ops/Torideani",
+        website: "https://www.youtube.com/watch?v=VH1xQjHz0Eo"
     },
     {
         imgURL: gummu,
         title: "Gummu",
         buttonTitle: "Click me",
         isVideo: true,
-        description: "Decentralized Music streaming plateforme on Massa Blockchain",
-        stars: 12,
-        commits: 12
+        description: "Decentralized and equitable music streaming platform for indep artits built on the Massa blockchain.",
+        stars: 0,
+        commits: 137,
+        github: "https://github.com/Gummu/gummu-web-app",
+        website: "https://www.linkedin.com/posts/gotta-go-hack_projet-gummu-1er-du-th%C3%A8me-art-activity-7019593142089707521-DpFR/?utm_source=share&utm_medium=member_desktop"
     },
     {
         imgURL: krylegal,
         title: "KryLegal",
-        description: "Decentralized Music streaming plateforme on Massa Blockchain",
-        buttonTitle: "Click me"
+        description: "AI powered website simplifying reading of lengthy terms of service agreements for other websites.",
+        buttonTitle: "Click me",
+        stars: 21,
+        commits: 72,
+        github: "https://github.com/Opportunists/openai-hackathon-les-cracks-FRONT",
+        website: "#"
     },
     {
         imgURL: krylegal,
         title: "42sh",
-        description: "Decentralized Music streaming plateforme on Massa Blockchain",
-        buttonTitle: "Click me"
+        description: "Shell built from scratch using C programming language.",
+        buttonTitle: "Click me",
+        stars: 4,
+        commits: 160,
+        github: "https://github.com/Yasha-ops/42sh-epita",
+        website: "#"
     },
     {
         imgURL: krylegal,
         title: "DHCPouxy",
-        description: "Decentralized Music streaming plateforme on Massa Blockchain",
-        buttonTitle: "Click me"
+        stars: 6,
+        commits: 198,
+        description: "DHCP implementation built from scratch using C programming language according to RFC specifications.",
+        buttonTitle: "Click me",
+        website: "#",
+        github: "https://github.com/DHCPouxy/DHCP"
     },
 ]
 
 
 // TODO: Add project description image etc... Flip card animation
 const Project = (props: any) => {
+    console.log(props)
     return (
         <div className="card-container group">
             <div className="flex-auto w-full bg-background flex flex-col h-full text-center text-green-500">
@@ -79,9 +98,9 @@ const Project = (props: any) => {
                     </div>
                 </div>
 
-                <div className="w-full text-left flex-auto flex flex-col px-4 gap-3 pt-4">
+                <div className="w-full text-left flex-auto flex flex-col px-4 gap-1 pt-4">
                     <p>yasha: ~$ <span className="text-white">cat README.md</span></p>
-                    <p className="text-white">{props.description}</p>
+                    <p className="text-white text-justify">{props.description}</p>
                 </div>
 
                 <div className="w-full bg-[#D5CDCA]">
@@ -101,12 +120,12 @@ const Project = (props: any) => {
                 </div>
             </div>
 
-            <figcaption className="group-hover:opacity-100">
+            <figcaption className="group-hover:opacity-100 hidden group-hover:flex">
                 <h3>{props.title}</h3>
                 <div className="flex w-full justify-around px-5">
-                    <button type="button"><SiGithub size={'100%'} /></button>
-                    <button type="button"><AiOutlineLink size={'100%'} /></button>
-                    <button type="button"><AiOutlineInfoCircle size={'100%'} /></button>
+                    <a href={props.github} type="button" className='max-h-[70px]'><SiGithub size={'100%'} /></a>
+                    <a href={props.website} type="button" className='max-h-[70px]'><AiOutlineLink size={'100%'} /></a>
+                    <a href={'#'} type="button" className='max-h-[70px]'><AiOutlineInfoCircle size={'100%'} /></a>
                 </div>
             </figcaption >
         </div >
@@ -118,8 +137,8 @@ class Projects extends React.Component {
     render() {
         return (
             <section className="h-auto w-full bg-primary text-center flex flex-col items-center px-4 gap-5 py-20" id='projects'>
-                <h1 className="text-white font-bold text-4xl tracking-wider">My projects</h1>
-                <p className="pb-4 text-lg font-semibold text-white">Here are a few padeed dede st projects I've worked on.</p>
+                <h1 className="dark:text-background text-white font-bold text-4xl tracking-wider">My projects</h1>
+                <p className="dark:text-background text-white pb-4 text-lg font-semibold text-white">Here are some of my latest projects:</p>
                 <div className='w-full md:hidden block' data-name='small'>
                     <GridCarousel cols={1} rows={2} gap={5}>
                         {
@@ -132,6 +151,8 @@ class Projects extends React.Component {
                                     description={elt.description ?? ""}
                                     stars={elt.stars ?? 0}
                                     commits={elt.commits ?? 0}
+                                    github={elt.github}
+                                    website={elt.website}
                                 />
                             })
                         }
@@ -149,6 +170,8 @@ class Projects extends React.Component {
                                     description={elt.description ?? ""}
                                     stars={elt.stars ?? 0}
                                     commits={elt.commits ?? 0}
+                                    github={elt.github}
+                                    website={elt.website}
                                 />
                             })
                         }
