@@ -13,10 +13,10 @@ export default class Contact extends React.Component {
                         <a href={"https://www.linkedin.com/in/yassine-damiri/"} className='md:max-w-[70px]'>
                             <SiLinkedin size={'100%'} />
                         </a>
-                        <a href={"https://www.linkedin.com/in/yassine-damiri/"} className='md:max-w-[70px]'>
+                        <a href={"https://github.com/yasha-ops"} className='md:max-w-[70px]'>
                             <SiGithub size={'100%'} />
                         </a>
-                        <a href={"https://twitter.com/YasDams"} className='md:max-w-[70px]'>
+                        <a href={"#"} className='md:max-w-[70px]'>
                             <SiTwitter size={'100%'} />
                         </a>
                         <a href={"https://www.instagram.com/yassinedamiri/"} className='md:max-w-[70px]'>
