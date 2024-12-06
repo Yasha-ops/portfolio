@@ -24,7 +24,7 @@ const HomeAbout: React.FC<{}> = () => {
         <img src={Picture} className=" w-[500px]" />
 
         <div className="flex flex-col max-w-[600px]">
-          <span className="text-md">
+          <span className="text-lg">
             I'm a{" "}
             <span className="font-bold text-primary">
               cybersecurity engineer
@@ -32,7 +32,10 @@ const HomeAbout: React.FC<{}> = () => {
             , graduated in 2024, and a fullstack developer with a flair for
             crafting sleek frontends and secure backends. Since starting my
             freelance journey in 2021, I've built innovative, efficient
-            solutions for diverse clients. When I'm not coding, I recharge by{" "}
+            solutions for diverse clients.
+            <br />
+            <br />
+            When I'm not coding, I recharge by{" "}
             <span className="font-bold text-primary">
               catching waves at the beach
             </span>
