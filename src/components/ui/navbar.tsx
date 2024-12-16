@@ -7,6 +7,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import YashaIcon from "@/assets/corporate/yasha.svg";
 
 ("use client");
 
@@ -60,7 +61,7 @@ export function MiddleMenuButtons() {
           <NavigationMenuLink
             className={cn(navigationMenuTriggerStyle(), "rounded-lg")}
           >
-            Home
+            Cybersecurity
           </NavigationMenuLink>
         </NavigationMenuItem>
 
@@ -152,7 +153,7 @@ ListItem.displayName = "ListItem";
 const Navbar: React.FC<{}> = () => {
   return (
     <nav className="container flex justify-between py-3 mx-auto mt-2">
-      <div>LOGO</div>
+      <img src={YashaIcon} className="w-[40px] h-[40px]" />
 
       <MiddleMenuButtons />
 

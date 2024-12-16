@@ -79,8 +79,8 @@ const HomeExperience = () => {
             icon={CRIIcon}
           />
 
-          <span className="text-sm font-bold text-center cursor-pointer hover:text-primary text-secondary">
-            Learn more
+          <span className="mt-4 text-sm font-bold text-center cursor-pointer hover:text-primary text-secondary">
+            Learn more...
           </span>
         </div>
       </div>
