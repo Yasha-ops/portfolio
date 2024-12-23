@@ -14,6 +14,7 @@ import YashaIcon from "@/assets/corporate/yasha.svg";
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -46,16 +47,15 @@ const components: { title: string; href: string; description: string }[] = [
       "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
   },
   {
-    title: "Tooltip",
+    title: "More projects",
     href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    description: "Discover my other projects",
   },
 ];
 
 export function MiddleMenuButtons() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="hidden md:block">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuLink
@@ -151,13 +151,19 @@ const ListItem = React.forwardRef<
 ListItem.displayName = "ListItem";
 
 const Navbar: React.FC<{}> = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState<boolean>(false);
   return (
-    <nav className="container flex justify-between py-3 mx-auto mt-2">
+    <nav className="container flex justify-between items-center py-3 mt-2">
       <img src={YashaIcon} className="w-[40px] h-[40px]" />
+
+      <Menu
+        className="w-[40px] h-[40px] text-primary md:hidden"
+        onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+      />
 
       <MiddleMenuButtons />
 
-      <div className="flex gap-3 items-center text-sm">
+      <div className="hidden gap-3 items-center text-sm md:flex">
         <Button variant={"outline"}>Contact Me</Button>
         <Button variant={"default"}>Hire Me</Button>
       </div>

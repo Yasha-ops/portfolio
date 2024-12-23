@@ -4,11 +4,11 @@ import Footer from "./components/ui/footer";
 
 const App: React.FC<{}> = () => {
   return (
-    <>
+    <div className="flex-1">
       <Navbar />
-      <Home />
+      {/*<Home />*/}
       <Footer />
-    </>
+    </div>
   );
 };
 
