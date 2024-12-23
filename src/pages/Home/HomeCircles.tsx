@@ -78,7 +78,7 @@ const Circles = {
 
 export function HomeCircles() {
   return (
-    <div className="relative flex h-[500px] w-[500px] flex-col items-center justify-center overflow-hidden rounded-lg bg-background ">
+    <div className="hidden relative md:flex h-[500px] md:w-full lg:w-[500px] flex-col items-center justify-center overflow-hidden rounded-lg bg-background ">
       {/* Outer Circles (reverse) */}
 
       {Circles.first.map((elt, idx) => (
@@ -110,6 +110,52 @@ export function HomeCircles() {
         <OrbitingCircles
           className="size-[30px] border-none bg-transparent"
           radius={70}
+          duration={20}
+          delay={elt.delay}
+          reverse
+          key={idx}
+        >
+          <img src={elt.img} />
+        </OrbitingCircles>
+      ))}
+    </div>
+  );
+}
+
+export function MobileHomeCircles() {
+  return (
+    <div className="absolute inset-0 md:hidden opacity-80 mt-[200px] -z-10 flex h-[300px] flex-col items-center justify-center overflow-hidden rounded-lg bg-background w-full mx-auto">
+      {/* Outer Circles (reverse) */}
+
+      {Circles.first.map((elt, idx) => (
+        <OrbitingCircles
+          className="size-[30px] border-none bg-transparent"
+          radius={120}
+          duration={30}
+          delay={elt.delay}
+          reverse={true}
+          key={idx}
+        >
+          <img src={elt.img} />
+        </OrbitingCircles>
+      ))}
+
+      {Circles.second.map((elt, idx) => (
+        <OrbitingCircles
+          className="size-[30px] border-none bg-transparent"
+          radius={90}
+          duration={20}
+          delay={elt.delay}
+          key={idx}
+        >
+          <img src={elt.img} />
+        </OrbitingCircles>
+      ))}
+
+      {Circles.third.map((elt, idx) => (
+        <OrbitingCircles
+          className="size-[30px] border-none bg-transparent"
+          radius={50}
           duration={20}
           delay={elt.delay}
           reverse

@@ -15,6 +15,15 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+} from "./drawer";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -150,6 +159,10 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
+const MobileDrawer: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
+  return <div></div>;
+};
+
 const Navbar: React.FC<{}> = () => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState<boolean>(false);
   return (
@@ -158,7 +171,7 @@ const Navbar: React.FC<{}> = () => {
 
       <Menu
         className="w-[40px] h-[40px] text-primary md:hidden"
-        onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+        onClick={() => setIsDrawerOpen(true)}
       />
 
       <MiddleMenuButtons />
@@ -167,6 +180,24 @@ const Navbar: React.FC<{}> = () => {
         <Button variant={"outline"}>Contact Me</Button>
         <Button variant={"default"}>Hire Me</Button>
       </div>
+
+      <Drawer open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
+        <DrawerContent className="bg-white">
+          <DrawerHeader>
+            <DrawerTitle>Navigate</DrawerTitle>
+            <DrawerDescription>
+              Select the page you want to visit
+            </DrawerDescription>
+          </DrawerHeader>
+
+          <div className="flex flex-col justify-center px-10 text-md">
+            <span>Cybersecurity</span>
+            <span>Projects</span>
+            <span>Blog</span>
+            <span>Contact</span>
+          </div>
+        </DrawerContent>
+      </Drawer>
     </nav>
   );
 };
