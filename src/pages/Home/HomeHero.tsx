@@ -3,7 +3,7 @@ import { HomeCircles, MobileHomeCircles } from "./HomeCircles";
 
 const HomeHero: React.FC<{}> = () => {
   return (
-    <div className="container flex flex-col justify-center mx-auto h-screen lg:justify-between lg:mt-8 lg:flex-row md:h-auto">
+    <div className="container flex flex-col justify-center mx-auto min-h-[600px] lg:justify-between lg:mt-8 lg:flex-row md:h-auto">
       <div className="flex flex-col my-auto w-full text-center lg:w-2/5 lg:text-left mt-[100px] md:mt-[80px] md:items-center lg:items-start">
         <h1 className="text-[35px]  md:text-[40px] lg:text-[48px] font-bold mb-4 text-darkGray">
           Hi, I'm <span className="text-primary">Yassine</span>

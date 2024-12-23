@@ -20,10 +20,10 @@ const HomeAbout: React.FC<{}> = () => {
         </h2>
       </div>
 
-      <div className="flex justify-between w-full">
-        <img src={Picture} className=" w-[500px]" />
+      <div className="flex flex-col gap-10 justify-between items-center w-full md:gap-4 md:flex-row">
+        <img src={Picture} className="w-[340px] md:w-[420px] lg:w-[500px]" />
 
-        <div className="flex flex-col max-w-[600px]">
+        <div className="flex flex-col max-w-[600px] text-justify md:text-left">
           <span className="text-lg">
             I'm a{" "}
             <span className="font-bold text-primary">
@@ -43,7 +43,7 @@ const HomeAbout: React.FC<{}> = () => {
           </span>
 
           <div className="flex mt-7">
-            <Button className="flex items-center">
+            <Button className="flex items-center w-full md:w-auto">
               <Download size={40} className="text-white" />
               Download CV
             </Button>
