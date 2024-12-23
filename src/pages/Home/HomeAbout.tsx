@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const HomeAbout: React.FC<{}> = () => {
   return (
-    <div className="container flex flex-col justify-center items-center mx-auto mt-8 mb-[80px]">
+    <div className="container flex flex-col justify-center items-center mx-auto mt-8 md:mb-[80px] mb-[110px]">
       <div className="flex flex-col justify-center max-w-[500px] mb-12">
         <div className="flex justify-center mb-3">
           <Badge>About</Badge>

@@ -13,8 +13,8 @@ const Home: React.FC<{}> = () => {
       <HomeBackground />
       <HomeHero />
       <HomeAbout />
-      {/*<HomeExperience />
-      <HomeProjects />
+      <HomeExperience />
+      {/*<HomeProjects />
       <HomeHackathons />
       <HomeGetInTouch />*/}
     </>

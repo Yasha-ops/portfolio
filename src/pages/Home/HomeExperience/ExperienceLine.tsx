@@ -27,7 +27,10 @@ const ExperienceLine: React.FC<ExperienceLineProps> = ({
       className="flex gap-4 items-start w-full bg-white rounded-[8px] shadow-sm p-4 "
       onClick={() => setDescriptionVisibility(!isDescriptionVisible)}
     >
-      <img src={icon} className=" w-[50px] h-[50px] object-center" />
+      <img
+        src={icon}
+        className=" h-[65px] w-[50px] md:h-[50px] object-center"
+      />
 
       <div className="flex flex-col w-full">
         <div className="flex justify-between w-full group h-[50px]">
@@ -45,7 +48,7 @@ const ExperienceLine: React.FC<ExperienceLineProps> = ({
             <span className="text-sm">{jobTitle}</span>
           </div>
 
-          <span className="text-sm">{duration}</span>
+          <span className="text-sm text-right">{duration}</span>
         </div>
 
         {isDescriptionVisible ? <LineDescription xps={xps} /> : undefined}

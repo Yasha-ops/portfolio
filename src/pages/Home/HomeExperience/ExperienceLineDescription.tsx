@@ -6,7 +6,7 @@ export interface LineDescriptionProps {
 
 const LineDescription: React.FC<LineDescriptionProps> = ({ xps }) => {
   return (
-    <div className="flex-col mt-2 mb-3 text-sm">
+    <div className="flex-col mt-8 mb-3 text-sm md:mt-2">
       {xps.map((elt, idx) => {
         return (
           <div className="flex gap-2 w-full" key={idx}>
