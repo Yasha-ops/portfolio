@@ -17,13 +17,12 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
 } from "./drawer";
+import { Link } from "react-router-dom";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -70,13 +69,21 @@ export function MiddleMenuButtons() {
           <NavigationMenuLink
             className={cn(navigationMenuTriggerStyle(), "rounded-lg")}
           >
-            Cybersecurity
+            <Link to="/cybersecurity">Cybersecurity</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            className={cn(navigationMenuTriggerStyle(), "rounded-lg")}
+          >
+            <Link to="/experience">Experience</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
           <NavigationMenuTrigger className="rounded-lg">
-            Projects
+            <Link to="/projects">Projects</Link>
           </NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white rounded-xl shadow-lg">
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
@@ -95,7 +102,7 @@ export function MiddleMenuButtons() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="rounded-lg">
-            Blog
+            <Link to="/blog">Blog</Link>
           </NavigationMenuTrigger>
 
           <NavigationMenuContent className="bg-white rounded-xl shadow-lg">
@@ -125,7 +132,7 @@ export function MiddleMenuButtons() {
           <NavigationMenuLink
             className={cn(navigationMenuTriggerStyle(), "rounded-lg")}
           >
-            Contact
+            <Link to="/contact">Contact</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
@@ -159,15 +166,13 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
-const MobileDrawer: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
-  return <div></div>;
-};
-
 const Navbar: React.FC<{}> = () => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState<boolean>(false);
   return (
     <nav className="container flex justify-between items-center py-3 mt-2">
-      <img src={YashaIcon} className="w-[40px] h-[40px]" />
+      <Link to="/">
+        <img src={YashaIcon} className="w-[40px] h-[40px]" />
+      </Link>
 
       <Menu
         className="w-[40px] h-[40px] text-primary md:hidden"
