@@ -4,6 +4,7 @@ import EYIcon from "@/assets/corporate/ey.svg";
 import MassaIcon from "@/assets/corporate/massa.svg";
 import M19Icon from "@/assets/corporate/m19.jpg";
 import CRIIcon from "@/assets/corporate/cri.png";
+import BlurFade from "@/components/ui/blur-fade";
 
 const HomeExperience = () => {
   return (
@@ -31,52 +32,61 @@ const HomeExperience = () => {
         </div>
 
         <div className="flex flex-col gap-5 w-full">
-          <ExperienceLine
-            corporateName="Ernst & Young"
-            duration="May 2018 - Present"
-            jobTitle="Cybersecurity Consultant"
-            xps={[
-              {
-                details: "Voili voilou",
-              },
-            ]}
-            icon={EYIcon}
-          />
+          <BlurFade delay={0.25} inView direction="right">
+            <ExperienceLine
+              corporateName="Ernst & Young"
+              duration="May 2018 - Present"
+              jobTitle="Cybersecurity Consultant"
+              xps={[
+                {
+                  details: "Voili voilou",
+                },
+              ]}
+              icon={EYIcon}
+            />
+          </BlurFade>
 
-          <ExperienceLine
-            corporateName="Massa Labs"
-            duration="May 2018 - Present"
-            jobTitle="Cybersecurity Consultant"
-            xps={[
-              {
-                details: "Voili voilou",
-              },
-            ]}
-            icon={MassaIcon}
-          />
-          <ExperienceLine
-            corporateName="M19"
-            duration="May 2018 - Present"
-            jobTitle="Cybersecurity Consultant"
-            xps={[
-              {
-                details: "Voili voilou",
-              },
-            ]}
-            icon={M19Icon}
-          />
+          <BlurFade delay={0.25 * 1.5} inView direction="right">
+            <ExperienceLine
+              corporateName="Massa Labs"
+              duration="May 2018 - Present"
+              jobTitle="Cybersecurity Consultant"
+              xps={[
+                {
+                  details: "Voili voilou",
+                },
+              ]}
+              icon={MassaIcon}
+            />
+          </BlurFade>
 
-          <ExperienceLine
-            corporateName="CRI - Conception Réalisation"
-            duration="May 2018 - Present"
-            jobTitle="Cybersecurity Consultant"
-            xps={[
-              {
-                details: "Voili voilou",
-              },
-            ]}
-            icon={CRIIcon}
-          />
+          <BlurFade delay={0.25 * 2} inView direction="right">
+            <ExperienceLine
+              corporateName="M19"
+              duration="May 2018 - Present"
+              jobTitle="Cybersecurity Consultant"
+              xps={[
+                {
+                  details: "Voili voilou",
+                },
+              ]}
+              icon={M19Icon}
+            />
+          </BlurFade>
+
+          <BlurFade delay={0.25 * 2.5} inView direction="right">
+            <ExperienceLine
+              corporateName="CRI - Conception Réalisation"
+              duration="May 2018 - Present"
+              jobTitle="Cybersecurity Consultant"
+              xps={[
+                {
+                  details: "Voili voilou",
+                },
+              ]}
+              icon={CRIIcon}
+            />
+          </BlurFade>
 
           <span className="mt-4 text-sm font-bold text-center cursor-pointer hover:text-primary text-secondary">
             Learn more...

@@ -17,8 +17,10 @@ const GithubCard: React.FC<{
     >
       <div className="flex flex-row justify-between gap-2 items-center">
         <div className="flex flex-col">
-          <span className="text-md font-medium dark:text-white">{name}</span>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+          <span className="text-md font-medium dark:text-white font-semibold">
+            {name}
+          </span>
+          <p className="text-xs font-medium dark:text-white/40">{username} /</p>
         </div>
 
         <img className="rounded-full" width="32" height="32" alt="" src={img} />

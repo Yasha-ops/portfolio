@@ -3,15 +3,12 @@ import Marquee from "@/components/ui/marquee";
 import GithubCard from "./GithubCard";
 import Data from "./projects.json";
 
-const firstRow = Data.reviews
-  .sort(() => Math.random() - 0.5)
-  .slice(0, Data.reviews.length / 2);
-const secondRow = Data.reviews
-  .sort(() => Math.random() - 0.5)
-  .slice(Data.reviews.length / 2);
-const thirdRow = Data.reviews
-  .sort(() => Math.random() - 0.5)
-  .slice(Data.reviews.length / 2);
+const firstRow = Data.reviews.slice(0, Data.reviews.length / 3);
+const secondRow = Data.reviews.slice(
+  Math.floor(Data.reviews.length / 3),
+  Math.floor((2 * Data.reviews.length) / 3)
+);
+const thirdRow = Data.reviews.slice(Math.floor((2 * Data.reviews.length) / 3));
 
 const HomeProjects = () => {
   return (

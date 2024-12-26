@@ -190,7 +190,7 @@ const Navbar: React.FC<{}> = () => {
             </DrawerDescription>
           </DrawerHeader>
 
-          <div className="flex flex-col justify-center px-10 text-md">
+          <div className="flex flex-col justify-center px-10 text-md mb-[50px]">
             <span>Cybersecurity</span>
             <span>Projects</span>
             <span>Blog</span>
