@@ -4,7 +4,6 @@ import ImgGummu from "@/assets/hackathons/gummu.png";
 import ImgR2Start from "@/assets/hackathons/r2start.png";
 import ImgLightCom from "@/assets/hackathons/lightCom.png";
 import ImgKryLegal from "@/assets/hackathons/krylegal.png";
-import ImgRaven from "@/assets/hackathons/raven.png";
 import ImgIgem from "@/assets/hackathons/cleanHeat.png";
 import ImgVintrade from "@/assets/hackathons/vintrade.png";
 

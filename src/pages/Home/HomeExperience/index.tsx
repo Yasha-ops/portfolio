@@ -4,7 +4,6 @@ import EYIcon from "@/assets/corporate/ey.svg";
 import MassaIcon from "@/assets/corporate/massa.svg";
 import M19Icon from "@/assets/corporate/m19.jpg";
 import CRIIcon from "@/assets/corporate/cri.png";
-import EpitaIcon from "@/assets/corporate/epita.jpg";
 
 const HomeExperience = () => {
   return (

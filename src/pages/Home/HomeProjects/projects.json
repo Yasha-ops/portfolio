@@ -1,0 +1,74 @@
+{
+  "reviews": [
+    {
+      "name": "RavenThief",
+      "body": "Infostealer and C2 developed by final-year students from the SRS major at EPITA, as part of a project for the virology course. The source code has been designed exclusively for educational purposes…",
+      "img": "https://avatar.vercel.sh/jack"
+    },
+    {
+      "name": "PyRattle",
+      "body": "Python wrapper for Windows Defender cli binary (MpCmdRun.exe)",
+      "img": "https://avatar.vercel.sh/jill"
+    },
+    {
+      "name": "JSMole",
+      "body": "A Go script for rapid and accurate downloading of debugging sources equivalent to those presented by Google Web browsers.",
+      "img": "https://avatar.vercel.sh/john"
+    },
+    {
+      "name": "AshCmd",
+      "body": "Golang wrapper for ashCmd.exe (Avast)",
+      "img": "https://avatar.vercel.sh/john"
+    },
+    {
+      "name": "Vonjeo",
+      "body": "Golang wrapper for ashCmd.exe (Avast)",
+      "img": "https://avatar.vercel.sh/john"
+    },
+    {
+      "name": "GearedCameraInC",
+      "body": "Golang wrapper for ashCmd.exe (Avast)",
+      "img": "https://avatar.vercel.sh/john"
+    },
+    {
+      "name": "Eye-T",
+      "body": "Golang wrapper for ashCmd.exe (Avast)",
+      "img": "https://avatar.vercel.sh/john"
+    },
+    {
+      "name": "Torideani",
+      "body": "Golang wrapper for ashCmd.exe (Avast)",
+      "img": "https://avatar.vercel.sh/john"
+    },
+    {
+      "name": "Malin",
+      "body": "Golang wrapper for ashCmd.exe (Avast)",
+      "img": "https://avatar.vercel.sh/john"
+    },
+    {
+      "name": "BabAI",
+      "body": "Golang wrapper for ashCmd.exe (Avast)",
+      "img": "https://avatar.vercel.sh/john"
+    },
+    {
+      "name": "STNW",
+      "body": "Simple Nmap Scanner for Nodejs",
+      "img": "https://avatar.vercel.sh/jane"
+    },
+    {
+      "name": "FOFun",
+      "body": "Chrome extension to automatically extract IP addresses from a FOFA page.",
+      "img": "https://avatar.vercel.sh/jenny"
+    },
+    {
+      "name": "ReadyToStart",
+      "body": "I'm at a loss for words. This is amazing. I love it.",
+      "img": "https://avatar.vercel.sh/james"
+    },
+    {
+      "name": "VinTrade",
+      "body": "I'm at a loss for words. This is amazing. I love it.",
+      "img": "https://avatar.vercel.sh/james"
+    }
+  ]
+}
