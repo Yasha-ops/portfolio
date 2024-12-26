@@ -9,7 +9,7 @@ import EpitaIcon from "@/assets/corporate/epita.jpg";
 const HomeExperience = () => {
   return (
     <div
-      className="relative py-10 w-full mb-[80px]"
+      className="relative py-10 w-full"
       style={{
         backgroundImage: `url("/polygones/intercept.svg")`,
         backgroundRepeat: "no-repeat",

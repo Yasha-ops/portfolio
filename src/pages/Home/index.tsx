@@ -15,8 +15,8 @@ const Home: React.FC<{}> = () => {
       <HomeAbout />
       <HomeExperience />
       <HomeProjects />
-      {/*<HomeHackathons />
-      <HomeGetInTouch />*/}
+      <HomeHackathons />
+      <HomeGetInTouch />
     </>
   );
 };

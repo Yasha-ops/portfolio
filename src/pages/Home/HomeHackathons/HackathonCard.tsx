@@ -1,20 +1,48 @@
 import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
-const HackathonCard: React.FC<{}> = () => {
+const HackathonCard: React.FC<{
+  className?: string;
+  imgSrc?: string;
+  imgClass?: string;
+  projectTitle: string;
+  projectDuration: string;
+  projectDescription: string;
+  stack: string[];
+}> = ({
+  className,
+  imgSrc,
+  imgClass,
+  projectTitle,
+  projectDescription,
+  projectDuration,
+  stack,
+}) => {
   return (
-    <div className="w-full bg-white shadow-lg rounded-[8px]  hover:shadow-lg hover:-translate-y-[5px] transition duration-500">
-      <div className="h-[200px] bg-red-300 w-full rounded-t-[8px]">Video</div>
+    <div
+      className={cn(
+        "w-full bg-white shadow-lg transition duration-500 rounded-[8px] hover:shadow-lg hover:-translate-y-[5px]",
+        className
+      )}
+    >
+      <img
+        className={cn(
+          "object-cover w-full bg-black h-[200px] rounded-t-[8px]",
+          imgClass
+        )}
+        src={imgSrc}
+      />
 
       <div className="flex flex-col p-2">
-        <span>Project Title</span>
-        <span>Project Duration</span>
-        <span className="text-secondary">Description</span>
-        <div className="flex">
-          <Badge>NextJs</Badge>
-          <Badge>ReactJS</Badge>
-          <Badge>React Native</Badge>
-          <Badge>Typescript</Badge>
-          <Badge>Golang</Badge>
+        <div className="flex justify-between items-center mb-1 w-full">
+          <span className="font-semibold text-md">{projectTitle}</span>
+          <span>{projectDuration}</span>
+        </div>
+        <span className="mb-2 text-secondary">{projectDescription}</span>
+        <div className="flex gap-2 justify-start w-full text-xs">
+          {stack.map((elt) => {
+            return <Badge>{elt}</Badge>;
+          })}
         </div>
       </div>
     </div>

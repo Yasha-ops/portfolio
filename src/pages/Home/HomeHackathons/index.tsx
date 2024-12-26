@@ -1,5 +1,12 @@
 import { Badge } from "@/components/ui/badge";
 import HackathonCard from "./HackathonCard";
+import ImgGummu from "@/assets/hackathons/gummu.png";
+import ImgR2Start from "@/assets/hackathons/r2start.png";
+import ImgLightCom from "@/assets/hackathons/lightCom.png";
+import ImgKryLegal from "@/assets/hackathons/krylegal.png";
+import ImgRaven from "@/assets/hackathons/raven.png";
+import ImgIgem from "@/assets/hackathons/cleanHeat.png";
+import ImgVintrade from "@/assets/hackathons/vintrade.png";
 
 const HomeHackathons: React.FC<{}> = () => {
   return (
@@ -20,13 +27,58 @@ const HomeHackathons: React.FC<{}> = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-3 gap-5 mb-8 w-full">
-        <HackathonCard />
-        <HackathonCard />
-        <HackathonCard />
-        <HackathonCard />
-        <HackathonCard />
-        <HackathonCard />
+      <div className="grid grid-cols-1 gap-5 mb-8 w-full md:grid-cols-3 md:gap-5">
+        <HackathonCard
+          imgSrc={ImgR2Start}
+          imgClass="bg-white"
+          projectTitle="Ready2Start"
+          projectDescription="Bla bla bla bla bla"
+          projectDuration="3 days"
+          stack={["NodeJs", "ReactJS", "MySQL"]}
+        />
+        <HackathonCard
+          imgSrc={ImgGummu}
+          imgClass="bg-primary/10"
+          projectTitle="Gummu"
+          projectDescription="Bla bla bla"
+          projectDuration="3 days"
+          stack={["NodeJs", "ReactJs", "React Native", "Typescript"]}
+        />
+        <HackathonCard
+          imgSrc={ImgVintrade}
+          projectTitle="VinTrade"
+          projectDescription="Bla bla bla bla"
+          projectDuration="3 days"
+          stack={["NestJs", "ReactJs", "MongoDB"]}
+        />
+
+        <HackathonCard
+          imgSrc={ImgKryLegal}
+          imgClass="bg-black"
+          projectTitle="KryLegal"
+          className="hidden md:block"
+          projectDescription="Bla bla bla bla bla"
+          projectDuration="1 week"
+          stack={["Rust", "ReactJS", "NodeJs"]}
+        />
+        <HackathonCard
+          imgSrc={ImgIgem}
+          imgClass="bg-white"
+          projectTitle="Clean Heat"
+          className="hidden md:block"
+          projectDescription="Bla bla bla bla bla"
+          projectDuration="1 year"
+          stack={["ReactJs", "Python", "NodeJs"]}
+        />
+        <HackathonCard
+          className="hidden md:block"
+          imgSrc={ImgLightCom}
+          imgClass="bg-black"
+          projectTitle="Light Com"
+          projectDescription="bla bla bla"
+          projectDuration="3 days"
+          stack={["Python", "OpenCV", "C++"]}
+        />
       </div>
     </div>
   );

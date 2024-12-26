@@ -82,7 +82,7 @@ const ReviewCard = ({
 
 const HomeProjects = () => {
   return (
-    <div className="container flex flex-col justify-center items-center mx-auto mt-8 mb-4">
+    <div className="container flex flex-col justify-center items-center mx-auto mt-8 mb-12 md:mb-4">
       <div className="flex flex-col justify-center max-w-[500px] mb-10">
         <div className="flex justify-center mb-3">
           <Badge>My projects</Badge>
