@@ -4,6 +4,7 @@ import Footer from "./components/ui/footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Skills from "./pages/Skills";
 
 const App: React.FC<{}> = () => {
   return (
@@ -13,6 +14,7 @@ const App: React.FC<{}> = () => {
         <Routes>
           <Route index element={<Home />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="skills" element={<Skills />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

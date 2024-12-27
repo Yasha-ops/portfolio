@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { HomeCircles, MobileHomeCircles } from "./HomeCircles";
+import { HomeCircles } from "../HomeCircles";
 import BlurFade from "@/components/ui/blur-fade";
-import HomeSkills from "./HomeSkills";
+import HomeSkills from "../HomeSkills";
 import { Link } from "react-router-dom";
 
 const HomeHero: React.FC<{}> = () => {

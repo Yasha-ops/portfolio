@@ -63,13 +63,21 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function MiddleMenuButtons() {
   return (
-    <NavigationMenu className="hidden md:block">
+    <NavigationMenu className="hidden lg:block">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuLink
             className={cn(navigationMenuTriggerStyle(), "rounded-lg")}
           >
-            <Link to="/cybersecurity">Cybersecurity</Link>
+            <Link to="/services">Services</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            className={cn(navigationMenuTriggerStyle(), "rounded-lg")}
+          >
+            <Link to="/skills">Skills</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
 
@@ -175,15 +183,20 @@ const Navbar: React.FC<{}> = () => {
       </Link>
 
       <Menu
-        className="w-[40px] h-[40px] text-primary md:hidden"
+        className="w-[40px] h-[40px] text-primary lg:hidden"
         onClick={() => setIsDrawerOpen(true)}
       />
 
       <MiddleMenuButtons />
 
-      <div className="hidden gap-3 items-center text-sm md:flex">
-        <Button variant={"outline"}>Contact Me</Button>
-        <Button variant={"default"}>Hire Me</Button>
+      <div className="hidden gap-3 items-center text-sm lg:flex">
+        <Link to="/contact">
+          <Button variant={"outline"}>Cybersecurity</Button>
+        </Link>
+
+        <Link to="/contact">
+          <Button variant={"default"}>Contact Me</Button>
+        </Link>
       </div>
 
       <Drawer open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
