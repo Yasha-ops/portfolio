@@ -9,7 +9,7 @@ const ContactForm = () => {
       <BlurFade
         delay={0.25 * 1.5}
         inView
-        className="flex items-center mt-5 w-full"
+        className="flex flex-col items-center mt-1 w-full md:mt-5 md:flex-row"
       >
         <img src={PolygonContact} className="mx-auto w-2/3 md:w-1/3" />
         <div className="max-w-[680px] w-full flex flex-col gap-4 md:w-1/2 mx-auto mt-12 md:mt-0">
