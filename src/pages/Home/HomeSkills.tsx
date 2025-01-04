@@ -36,8 +36,13 @@ const slugs = [
 
 const HomeSkills: React.FC<{}> = () => {
   return (
-    <div className="flex md:hidden overflow-hidden relative justify-center items-center px-12 max-w-lg rounded-lg size-full bg-background">
-      <IconCloud iconSlugs={slugs} />
+    <div className="flex overflow-hidden relative justify-center items-center px-12 max-w-lg rounded-lg md:hidden size-full bg-background">
+      <IconCloud
+        iconSlugs={slugs}
+        onIconClick={(slug) => {
+          console.log(slug);
+        }}
+      />
     </div>
   );
 };
