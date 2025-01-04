@@ -1,5 +1,4 @@
 import BlurFade from "@/components/ui/blur-fade";
-import ImgSkills from "@/assets/polygones/skills.svg";
 import {
   SectionHeader,
   SectionHeaderDescription,
